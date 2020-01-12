@@ -63,8 +63,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (walkStep == stepInterval)
         {
-            walk.Play();
-            walkStep++;
+            if (isGrounded)
+            {
+                walk.Play();
+                walkStep++;
+            }
         }
         if (walkStep > stepInterval)
         {
